@@ -1,3 +1,3 @@
 # This repository is created for A2SV bootcamp course.
 A2SV is a bootcamp in Addis Ababa working on youths who are willing to persue programming and problem solving.
-It competes students based on solving Leetcode, Hackerrank, and codeforces problems.
+Students compete by solving Leetcode, Hackerrank, and codeforces problems.
