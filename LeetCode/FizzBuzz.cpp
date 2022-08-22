@@ -1,5 +1,4 @@
-/* This program is a solution for the FizzBuzz problem on leetcode.*/
-
+// 412. Fizz Buzz
 class Solution {
 public:
     vector<string> fizzBuzz(int n)
