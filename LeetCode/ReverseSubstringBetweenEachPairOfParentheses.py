@@ -1,0 +1,19 @@
+#1190. Reverse Substrings Between Each Pair of Parentheses
+class Solution:
+    def reverseParentheses(self, s: str) -> str:
+        stack = []
+        subStr = []
+
+        for i in s:
+            if i != ')':
+                stack.append(i)
+            else:
+                while True:
+                    if stack[-1] == '(':
+                        stack.pop()
+                        stack.extend(subStr)
+                        subStr.clear()
+                        break
+                    subStr += stack.pop()
+                
+        return ''.join(stack)
