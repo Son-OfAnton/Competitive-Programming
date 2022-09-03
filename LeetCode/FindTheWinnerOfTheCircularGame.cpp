@@ -12,32 +12,28 @@ public:
 };
 
 /*
-* An iterative soluiton
-*
-* class Solution {
-* public:
-*   int findTheWinner(int n, int k) {
-*       vector<int> arr;
-*       int i = 1, current = 0, remove;
-*       while(i <= n)
-*       {
-*           arr.push_back(i);
-*           i++;
-*       }
-*       
-*       while(arr.size() > 1)
-*       {
-*           remove = (current + k - 1) % arr.size();
-*           arr.erase(arr.begin() + remove);
-*           current = remove;
-*        }
-*        
-*        return arr[0];
-*
-*    }
-* };
-*
-*
-*
+    An iterative solution
+    
+    class Solution {
+    public:
+        int findTheWinner(int n, int k) {
+            vector<int> arr;
+            int i = 1, current = 0;
+            while(i <= n)
+            {
+                arr.push_back(i);
+                i++;
+            }
+
+            while(arr.size() > 1)
+            {
+                current = (current + k - 1) % arr.size();
+                arr.erase(arr.begin() + current);
+            }
+
+            return arr[0];
+
+        }
+    };
 */
 
