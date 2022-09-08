@@ -3,15 +3,15 @@ class Solution:
     def checkArithmeticSubarrays(self, nums: List[int], l: List[int], r: List[int]) -> List[bool]:
         ans = []
         for i in range(len(l)):
-            temp = sorted(nums[l[i]:r[i]+1])
-            x = temp[1] - temp[0]
-            output = False
-            for j in range(1, len(temp)): 
+            arr = sorted(nums[l[i]:r[i]+1])
+            diff = arr[1] - arr[0]
+            state = False
+            for j in range(1, len(arr)): 
                 
-                if temp[j]-temp[j-1] != x:
-                    output = True
+                if arr[j]-arr[j-1] != diff:
+                    state = True
                     break
-            if output:
+            if state:
                 ans.append(False)
             else:
                 ans.append(True)
