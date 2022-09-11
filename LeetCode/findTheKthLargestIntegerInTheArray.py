@@ -1,5 +1,5 @@
 # 1985.Find the Kth Largest Integer in the Array
-# naive solution
+# naive and inefficient solution 
 
 class Solution:
     def kthLargestNumber(self, nums: List[str], k: int) -> str:
