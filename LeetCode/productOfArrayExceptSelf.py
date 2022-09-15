@@ -6,14 +6,15 @@ class Solution:
         left = []
         product = 1
         
-        for i in range(len(nums)):
-            left.append(product)
-            product *= nums[i]
-        
-        product = 1
         for i in range(len(nums)-1, -1, -1):
             right.append(product)
             product *= nums[i]
         right = right[::-1]
+        
+        product = 1
+        
+        for i in range(len(nums)):
+            left.append(product * right[i])
+            product *= nums[i]
 
-        return [left[i]*right[i] for i in range(len(nums))]
+        return left
