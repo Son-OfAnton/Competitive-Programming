@@ -13,3 +13,5 @@ class Solution:
                 nums[left], nums[i] = nums[i], nums[left]
                 left += 1
             i += 1
+
+# swapping a non-zero number with the first zero in the list
