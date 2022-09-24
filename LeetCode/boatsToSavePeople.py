@@ -15,3 +15,9 @@ class Solution:
             number_of_boats += 1
 
         return number_of_boats
+
+# After sorting it will be easier to spot the heaviest 
+# and the lighest person. Then we will check the possibility 
+# of the lighest person with heaviest on one boat. If it 
+# is valid we will place the lighest person else we will 
+# only place the heaviest one.
