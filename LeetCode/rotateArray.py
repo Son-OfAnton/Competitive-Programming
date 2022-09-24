@@ -16,4 +16,7 @@ class Solution:
             l += 1
             r -= 1
 
+# Reverse the whole array first. Then reverse two subarrays of 
+# the reversed version which are the subarray containing the 
+# first k elements and the subarray containing the remaining elements.
             
