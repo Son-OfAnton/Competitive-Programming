@@ -1,3 +1,5 @@
+# https://www.hackerrank.com/challenges/countingsort1/problem
+
 def countingSort(arr):
     # Write your code here
     result = [0] * 100
