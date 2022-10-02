@@ -1,3 +1,5 @@
+# https://www.hackerrank.com/challenges/counting-valleys/problem
+
 def countingValleys(steps, path):
     # Write your code here
     altitute, valleys = 0, 0
