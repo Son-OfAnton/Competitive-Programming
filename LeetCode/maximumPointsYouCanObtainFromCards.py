@@ -4,7 +4,11 @@ class Solution:
     def maxScore(self, cardPoints: List[int], k: int) -> int:
         left = 0
         right = len(cardPoints) - k
-        summ = sum(cardPoints[right:])
+        summ = 0
+        
+        for i in range(right, len(cardPoints)):
+            summ += cardPoints[i]
+        
         max_score = summ
         
         while right < len(cardPoints):
@@ -21,5 +25,3 @@ class Solution:
 # we get a larger summ than before we update max_score. Then we 
 # increase both left and right and repeat until right reaches the end.
     
-
-            
