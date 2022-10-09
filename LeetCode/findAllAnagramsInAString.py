@@ -11,11 +11,17 @@ class Solution:
             
         for i, char in enumerate(s):
             in_idx = ord(char) - ord('a')
-            diff += -1 if count[in_idx] > 0 else 1
+            
+            if count[in_idx] > 0:
+                diff += -1
+            else:
+                diff += 1
+            
             count[in_idx] -= 1
             
             if i >= len(p):
                 out_idx = ord(s[i - len(p)]) - ord('a')
+                
                 if count[out_idx] >= 0:
                     diff += 1 
                 else:
