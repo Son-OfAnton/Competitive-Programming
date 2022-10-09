@@ -13,7 +13,7 @@ class Solution:
             in_idx = ord(char) - ord('a')
             
             if count[in_idx] > 0:
-                diff += -1
+                diff -= 1
             else:
                 diff += 1
             
