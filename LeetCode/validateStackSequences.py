@@ -14,8 +14,8 @@ class Solution:
         return not stack
     
 # Push pushed's elements to stack then check stack's peek element
-# at the front of popped. If it is at the front of popped we will 
-# pop the stack and take the next element of popped as the front 
-# until we find a peek of stack which is not at the front of popped
-# or the stack is empty. If we find one of the above two cases we break. 
-# Then continue with pushing from pushed.
+# with the element at the front of popped. If it is at the front 
+# of popped we will pop the stack and take the next element of 
+# popped as the front  until we find a peek of stack which is not 
+# at the front of popped or the stack is empty. If we find one of
+# the above two cases we break.  Then continue with pushing from pushed.
