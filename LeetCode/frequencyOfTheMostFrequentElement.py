@@ -1,4 +1,4 @@
-# 2007. Find Original Array From Doubled Array
+# 1838. Frequency of the Most Frequent Element
 
 class Solution:
     def maxFrequency(self, nums: List[int], k: int) -> int:
