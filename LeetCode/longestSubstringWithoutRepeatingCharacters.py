@@ -14,7 +14,7 @@ class Solution:
                 char_idx[s[right]] = right
             else:
                 char_idx[s[right]] = right
-                max_len = max(max_len, len(s[left: right + 1]))
+                max_len = max(max_len, right - left + 1)
         
         return max_len
 
