@@ -2,6 +2,9 @@
 
 class Solution:
     def findOriginalArray(self, changed: List[int]) -> List[int]:
+        if len(changed) % 2 == 1:
+            return []
+        
         num_freq = Counter(changed)
         changed.sort()
         original = []
@@ -18,5 +21,3 @@ class Solution:
     
 # If the array is a doubled array we can keep deleting 
 # an element and its double and end up with an empty array.
-    
-    
