@@ -15,9 +15,10 @@ class Solution:
         return max_sum
     
 # We will have two varibles max_sum and summ which track 
-# the overall best sum and current sum respecitvely. Since 
-# the list can't be empty we can start max_sum by the first 
-# element. And add each number to summ and take the maximum
-# of summ and max_sum. If our sum becomes negative there is no
-# point to consider it beacause it does not contribute to the
-# subarray sum so make it 0 since 0 is greater than a negative number.
+# the overall best sum and the sum ending at the current 
+# number respecitvely. Since the list can't be empty we can 
+# start max_sum by the first element. And add each number to 
+# summ and take the maximum of summ and max_sum. If our sum 
+# becomes negative there is no point to consider it beacause 
+# it does not contribute to the subarray sum so make it 0 since
+# 0 is greater than a negative number.
