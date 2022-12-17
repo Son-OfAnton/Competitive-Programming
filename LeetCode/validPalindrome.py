@@ -9,4 +9,4 @@ class Solution:
             if char.isalnum():
                 ans += char
 
-        return True if ans == ans[::-1] else False 
+        return ans == ans[::-1]
