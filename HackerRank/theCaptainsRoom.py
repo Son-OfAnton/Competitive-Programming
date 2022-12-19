@@ -1,3 +1,5 @@
+# https://www.hackerrank.com/challenges/py-the-captains-room/problem?isFullScreen=true
+
 k = int(input())
 rooms = str(input()).split(' ')
 room_count = {}
