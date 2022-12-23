@@ -2,7 +2,7 @@
 
 class Solution:
     def toStringParser(self, char_digit: chr) -> int:
-        char_int = {}
+        char_int = dict()
         
         for digit in range(10):
             str_form = str(digit)
@@ -28,5 +28,5 @@ class Solution:
         product = int_num1 * int_num2
         
         return str(product)
-        
-        
+    
+    
