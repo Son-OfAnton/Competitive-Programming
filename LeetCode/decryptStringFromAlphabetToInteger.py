@@ -8,10 +8,10 @@ class Solution(object):
         
         while i < len(s):
             if s[i] != "#":
-                res += chr(96 + int(s[i]))
+                res += chr(int(s[i]) + 96)
                 i += 1               
             else:
-                res += chr(96 + int(s[i + 2] + s[i + 1]))
+                res += chr(int(s[i+2] + s[i+1]) + 96)
                 i += 3
                 
         return res[::-1]
