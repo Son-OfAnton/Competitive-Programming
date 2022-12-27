@@ -1,3 +1,5 @@
+# https://www.hackerrank.com/challenges/python-power-mod-power/problem?isFullScreen=true
+
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 from math import pow
 
