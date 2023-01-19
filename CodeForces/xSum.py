@@ -2,38 +2,19 @@
 
 from collections import defaultdict
 
-def neg_slope_diagonal(row_size, col_size, grid):
+def calc_diagonals_sum(row_size, col_size, grid):
     neg_slope_sum = defaultdict(int)
-
+    pos_slope_sum = defaultdict(int)
+    
     for rx in range(row_size):
         for cx in range(col_size):
             neg_slope_sum[rx+cx] += grid[rx][cx]
-
-    return neg_slope_sum
-
-def pos_slope_diagonal(row_size, col_size, grid):
-    pos_slope_sum = defaultdict(int)
-
-    for rx in range(row_size):
-        for cx in range(col_size):
             pos_slope_sum[rx-cx] += grid[rx][cx]
+            
+    return neg_slope_sum, pos_slope_sum
 
-    return pos_slope_sum
-  
-
-number_of_test_cases = int(input())
-
-for _ in range(number_of_test_cases):
-    dimension = list(map(int, input().split()))
-    row_size = dimension[0]
-    col_size = dimension[1]
-    grid = []
-
-    for row in range(row_size):
-        grid.append(list(map(int, input().split())))
-
-    pos_slope_sum = pos_slope_diagonal(row_size, col_size, grid)
-    neg_slope_sum = neg_slope_diagonal(row_size, col_size, grid)
+def get_max_attack(row_size, col_size, grid):
+    neg_slope_sum, pos_slope_sum = calc_diagonals_sum(row_size, col_size, grid) 
 
     max_attack = -1
 
@@ -43,8 +24,21 @@ for _ in range(number_of_test_cases):
 
             curr_sum = pos_slope_sum[rx-cx] + neg_slope_sum[rx+cx] - crossing_num
             max_attack = max(max_attack, curr_sum)
+            
+    return max_attack
 
-    print(max_attack)
+
+number_of_test_cases = int(input())
+
+for _ in range(number_of_test_cases):
+    row_size, col_size = map(int, input().split())
+    grid = []
+
+    for row in range(row_size):
+        grid.append(list(map(int, input().split())))
+
+    
+    print(get_max_attack(row_size, col_size, grid))
     
 # The idea is that all the elements' indexes' in the diagonal with positive slope
 # difference is equal and unique. All the elements' indexes' in the diagonal with 
