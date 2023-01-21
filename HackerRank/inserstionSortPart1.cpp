@@ -1,31 +1,22 @@
 // https://www.hackerrank.com/challenges/insertionsort1/problem
 
-void insertionSort1(int n, vector<int> arr) 
-{
-    int temp = arr[n-1];
-    for (int i = n - 2; i >= 0; i--)
-    {
-        if (arr[i] > temp)
-        {
-            arr[i + 1] = arr[i];
-            for (int i : arr)
-                cout << i << " ";
-            cout << endl;
-        }
-        else
-        {
-            arr[i + 1] = temp;
-            for (int i : arr)
-                cout << i << " ";
-            cout << endl;
-            break;
-        }
-        if(i == 0 && arr[i] >= temp)
-        {
-            arr[0] = temp;
-            for (int i : arr)
-                cout << i << " ";
-            cout << endl;
-        }
-    }
-}
+def printArr(arr):
+    for i in arr:
+        print(i, end=' ')
+    print()
+            
+def insertionSort1(n, arr):
+    # Write your code here     
+    temp = arr[n-1]
+    
+    for i in range(n-2, -1, -1):
+        if arr[i] > temp:
+            arr[i+1] = arr[i]
+            printArr(arr)
+        else:
+            arr[i+1] = temp
+            printArr(arr)
+            break
+        if i == 0 and arr[i] >= temp:
+            arr[0] = temp
+            printArr(arr)
