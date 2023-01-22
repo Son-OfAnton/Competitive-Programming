@@ -16,4 +16,9 @@ for i in range(1, number_of_laptops):
 print("Poor Alex")
 
 
+
+# After sorting the list of tuples by price, if there exist two laptops
+# where the first's price is larger than the second but their quality rank 
+# is the reverse, the sorting guarantees us to fing them adjacent.
+
     
