@@ -8,4 +8,8 @@ for _ in range(t):
     size = len(nums)
     
     print(nums[size//2])
+    
+    
+    
+# Just used basic math fact. 
 
