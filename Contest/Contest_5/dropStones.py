@@ -26,8 +26,6 @@ for _ in range(cases):
                 floor = rx
                    
     
-    for rx in range(row_size):
-        for cx in range(col_size):
-            print(grid[rx][cx],end='')
-        print()
+    for row in grid:
+        print("".join(row))
     print()
