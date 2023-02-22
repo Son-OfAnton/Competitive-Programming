@@ -8,13 +8,9 @@ ptr_1 = 0
 res = []
 
 for num in arr_2:
-    while ptr_1 < size_1:
-        if arr_1[ptr_1] < num:
-            ptr_1 += 1
-        else:
-            res.append(ptr_1)
-            break
-    if ptr_1 == size_1:
-        res.append(size_1)
+    while ptr_1 < size_1 and arr_1[ptr_1] < num:
+        ptr_1 += 1
+
+    res.append(ptr_1)
 
 print(*res)
