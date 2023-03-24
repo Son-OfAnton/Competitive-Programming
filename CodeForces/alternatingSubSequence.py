@@ -23,7 +23,6 @@ for _ in range(t):
             right += 1
 
         summ += maxx
-
         left = right
 
     print(summ)
