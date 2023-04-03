@@ -5,19 +5,15 @@ t = int(input())
 for _ in range(t):
     n = int(input())
     arr = list(map(int, input().split()))
-    arr_set = set(arr)
-    res = None
 
     for i in range(n):
-        pre = 0
-
+        sub_XOR = 0
+        
         for j in range(n):
-            if j == i:
-                continue
-            pre ^= arr[j]
 
-        if pre in arr_set:
-            res = pre
+            if i != j:
+                sub_XOR ^= arr[j]
+
+        if sub_XOR == arr[i]:
+            print(arr[i])
             break
-
-    print(res)
