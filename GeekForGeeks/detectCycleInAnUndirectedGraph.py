@@ -9,9 +9,7 @@ class Solution:
             for neighbour in adj[node]:
                 if neighbour == parent:
                     continue
-                if neighbour in visited:
-                    return True
-                if cycle_exists(neighbour, node):
+                if neighbour in visited or cycle_exists(neighbour, node):
                     return True
             
             return False
