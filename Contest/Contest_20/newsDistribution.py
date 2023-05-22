@@ -2,7 +2,6 @@
 
 from collections import defaultdict
 
-
 class UnionFind:
     def __init__(self, n):
         self.rep = [i for i in range(n + 1)]
@@ -33,20 +32,19 @@ class UnionFind:
 def main():
     n, m = map(int, input().split())
     uf = UnionFind(n)
-    groups = defaultdict(set)
 
     for _ in range(m):
-        inp = list(map(int, input().split()))
-        if inp[0] != 0:
-            root = inp[1]
-            for i in range(2, len(inp)):
-                uf.union(root, inp[i])
+        group = list(map(int, input().split()))
+        group_size = len(group)
+
+        for i in range(2, group_size):
+            uf.union(group[1], group[i])
 
     for i in range(1, n + 1):
-        groups[uf.find(i)].add(i)
-
-    for i in range(1, n + 1):
-        print(len(groups[uf.find(i)]), end=" ")
+        parent = uf.find(i)
+        uf.size[parent]
+        print(uf.size[parent], end=" ")
 
 
 main()
+
