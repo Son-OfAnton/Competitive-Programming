@@ -4,9 +4,7 @@ def main():
     def solve(curr, path):
         while curr != parent[curr - 1] and parent[curr - 1] != -1:
             path.appendleft(curr)
-            prev_curr = curr
-            curr = parent[curr - 1]
-            parent[prev_curr - 1] = -1
+            parent[curr - 1], curr = -1, parent[curr - 1]
 
         if curr == parent[curr - 1]:
             parent[curr - 1] = -1
