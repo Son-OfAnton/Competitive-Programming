@@ -1,16 +1,11 @@
 t = int(input())
 
 def all_pos_subarray_sum(arr):
-    max_sum = arr[0]
-    summ = 0
+    subarray_sum = 0
     
     for num in arr:
-        summ += num
-
-        if summ > max_sum:
-            max_sum = summ
-       
-        if summ <= 0:
+        subarray_sum += num
+        if subarray_sum <= 0:
             return False
         
     return True
