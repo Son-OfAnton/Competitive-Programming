@@ -13,6 +13,6 @@ def all_pos_subarray_sum(arr):
 for _ in range(t):
     n = int(input())
     cakes = list(map(int, input().split()))
-    adel = all_pos_subarray_sum(cakes) and all_pos_subarray_sum(cakes[::-1])
+    happy_yasser = all_pos_subarray_sum(cakes) and all_pos_subarray_sum(cakes[::-1])
 
-    print("YES" if adel else "NO")
+    print("YES" if happy_yasser else "NO")
