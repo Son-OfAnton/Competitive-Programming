@@ -1,54 +1,48 @@
 class TrieNode:
     def __init__(self):
         self.children = dict()
-        self.is_end = False
-
+        self.val = None
 
 class Trie:
     def __init__(self):
         self.root = TrieNode()
 
-    def insert(self, word):
+    def add_num(self, num):
         curr = self.root
-        for char in word:
-            if char not in curr.children:
-                curr.children[char] = TrieNode()
-            curr = curr.children[char]
-        curr.is_end = True
+        for i in range(31, -1, -1):
+            bit_val = 1 if num & (1 << i) else 0
+            if bit_val not in curr.children:
+                curr.children[bit_val] = TrieNode()
+            curr = curr.children[bit_val]
+        curr.val = num
 
-    def find_max_xor(self, word):
+    def find_max_xor(self, num):
         curr = self.root
-        xor_result = []
-        for char in word:
-            opposite_bit = '1' if char == '0' else '0'
+        for i in range(31, -1, -1):
+            bit = 1 if num & (1 << i) else 0
+            opposite_bit = 1 - bit
             if opposite_bit in curr.children:
-                xor_result.append(opposite_bit)
                 curr = curr.children[opposite_bit]
             else:
-                xor_result += char
-                curr = curr.children[char]
-        return int(''.join(xor_result), 2)
+                curr = curr.children[bit]
+
+        return curr.val if curr.val is not None else 0
 
 
 def solve():
     t = int(input())
-    num_binary = dict()
     for _ in range(t):
         n = int(input())
         nums = list(map(int, input().split()))
-        max_bits_needed = max(nums).bit_length() + 1
-        trie = Trie()
+        bit_trie = Trie()
 
         for num in nums:
-            binary = bin(num)[2:].zfill(max_bits_needed)
-            trie.insert(binary)
-            num_binary[num] = binary
+            bit_trie.add_num(num)
 
         max_xor = 0
         for num in nums:
-            binary = num_binary[num]
-            best = trie.find_max_xor(binary)
-            max_xor = max(max_xor, best ^ num)
+            best_xor_pair = bit_trie.find_max_xor(num)
+            max_xor = max(max_xor, best_xor_pair ^ num)
 
         print(max_xor)
 
