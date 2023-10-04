@@ -1,34 +1,45 @@
-def digit_sum(num):
-    total = 0
-    num_str = str(num)
-    for digit in num_str:
-        total += int(digit)
 
-    return total, num_str
+def find_max(m, s):
+    if s == 0:
+        return ['0'] if m == 1 else ['-1']
+    if s > 9*m:
+        return ['-1']
+
+    res = [0]*m
+    for i in range(m):
+        if s >= 9:
+            res[i] = 9
+            s -= 9
+        else:
+            res[i] = s
+            s = 0
+
+    return list(map(str, res))
 
 
-m, s = map(int, input().split())
+def find_min(max_num):
+    min_num = max_num[::-1]
+
+    i = 0
+    while min_num[i] == '0':
+        i += 1
+
+    min_num[i] = str(int(min_num[i]) - 1)
+    min_num[0] = str(int(min_num[0]) + 1)
+
+    return min_num
 
 
+if __name__ == '__main__':
+    m, s = map(int, input().split())
+    max_num = find_max(m, s)
+    if max_num == ['0'] or max_num == ['-1']:
+        print(int(max_num[0]), int(max_num[0]))
+        exit()
+    min_num = find_min(max_num)
 
-L = 10**(m-1)
-R = 10**(m) - 1
-print(R-L)
-# mid = (R - L) // 2
-# print(L, mid, R)
 
+    min_num = int(''.join(min_num))
+    max_num = int(''.join(max_num))
 
-# while L < R:
-#     mid = (R + L) // 2
-#     print(L, mid, R)
-#     total, num_str = digit_sum(mid)
-    
-#     if total == s:
-#         print(mid, int(num_str[::-1]))
-#         exit()
-#     if total < s:
-#         L = mid + 1
-#     else:
-#         R = mid - 1
-
-# print(-1, -1, end='')
+    print(min_num, max_num)
